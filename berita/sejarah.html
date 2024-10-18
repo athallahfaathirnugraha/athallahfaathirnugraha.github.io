@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Sejarah SMA Negeri 3 Bandung</title>
+  
+  <link rel="stylesheet" href="../styles/default.css">
+  <link rel="stylesheet" href="../styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="../scripts/scroll.js"></script>
+  <script src="../scripts/lib.js"></script>
+
+  <style>
+    main {
+      padding-inline: 14%;
+      column-gap: 25px;
+      justify-content: center;
+    }
+
+    main img {
+      height: 250px;
+      object-fit: cover;
+
+      border: 9px solid white;
+      filter: drop-shadow(0 15px 5px #000000);
+
+      margin-block: 25px;
+    }
+
+    p {
+      text-indent: 3rem;
+      margin-block: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="../index.html">BERANDA</a
+    ><a href="../berita.html">BERITA</a
+    ><a href="../hymne.html">HYMNE</a
+    ><a href="../mars.html">MARS</a>
+  </nav>
+
+  <script>
+    const nav = document.getElementsByTagName('nav')[0];
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) nav.setAttribute('small', 'true');
+       else nav.removeAttribute('small');
+    });
+  </script>
+
+  <header>
+    <h1>SEJARAH SMAN 3</h1>
+  </header>
+
+  <script>
+    const heading = document.querySelector('header > h1');
+    const targetSpacing = 5;
+
+    window.addEventListener('scroll', () => {
+      const headingRect = getCoords(heading);
+      const factor = getScroll() / headingRect.height;
+
+      heading.style.setProperty('letter-spacing', `${factor * targetSpacing}px`);
+    });
+  </script>
+
+  <main style="">
+    <p>Sekolah Menengah Atas Negeri 3 Bandung, yang sering dikenal sebagai SMAN 3 Bandung, adalah salah satu sekolah menengah atas yang terkemuka di Indonesia. Didirikan pada tahun 1955, sekolah ini awalnya berfungsi sebagai Sekolah Menengah Pertama dan kemudian berkembang menjadi Sekolah Menengah Atas. Sejak awal berdirinya, SMAN 3 Bandung telah berkomitmen untuk memberikan pendidikan berkualitas tinggi, dengan tujuan mencetak generasi muda yang berprestasi dan mampu bersaing di tingkat nasional maupun internasional.</p>
+
+    <p>Selama tahun-tahun awalnya, SMAN 3 Bandung menghadapi berbagai tantangan, termasuk kurangnya fasilitas dan sumber daya. Namun, dengan semangat juang para pendidik dan siswa, sekolah ini berhasil mengatasi berbagai kendala tersebut. Melalui dedikasi dan kerja keras, SMAN 3 Bandung mulai menarik perhatian masyarakat dan berhasil meningkatkan reputasinya sebagai lembaga pendidikan yang berkualitas. Dalam waktu singkat, sekolah ini berhasil menciptakan atmosfer belajar yang kondusif dan inspiratif bagi siswanya.</p>
+
+    <p>Pada tahun 1970-an, SMAN 3 Bandung mengalami perkembangan yang signifikan. Sekolah ini mulai mendapatkan dukungan dari pemerintah, baik dalam hal pendanaan maupun fasilitas. Dengan bantuan tersebut, SMAN 3 Bandung berhasil meningkatkan infrastruktur, seperti ruang kelas, laboratorium, dan perpustakaan. Selain itu, berbagai program ekstrakurikuler mulai diperkenalkan, yang bertujuan untuk mengembangkan bakat dan minat siswa di berbagai bidang, seperti seni, olahraga, dan sains.</p>
+
+    <p>Memasuki era 1990-an, SMAN 3 Bandung telah dikenal luas sebagai salah satu sekolah favorit di Bandung. Banyak siswa dari berbagai daerah mendaftar untuk bergabung dengan sekolah ini, yang semakin menambah daya saing di dalamnya. Di tengah perkembangan teknologi dan globalisasi, SMAN 3 Bandung berupaya untuk beradaptasi dengan perubahan zaman, dengan memasukkan kurikulum yang relevan dan modern. Inovasi dalam metode pembelajaran menjadi fokus utama untuk meningkatkan kualitas pendidikan dan menciptakan lulusan yang siap menghadapi tantangan global.</p>
+
+    <p>Di awal abad ke-21, SMAN 3 Bandung terus menunjukkan prestasi yang membanggakan. Sekolah ini menjadi salah satu peraih akreditasi A dari Badan Akreditasi Nasional Sekolah/Madrasah (BAN-S/M), yang menunjukkan komitmen terhadap kualitas pendidikan. Berbagai prestasi akademik dan non-akademik diraih oleh siswa SMAN 3 Bandung, baik di tingkat lokal, nasional, maupun internasional. Selain itu, alumni SMAN 3 Bandung telah berhasil menempati posisi strategis di berbagai bidang, menunjukkan bahwa pendidikan yang diterima di sekolah ini sangat berpengaruh terhadap masa depan mereka.</p>
+
+    <p>Hingga saat ini, SMAN 3 Bandung tetap menjadi salah satu ikon pendidikan di Indonesia. Dengan dedikasi para pendidik dan dukungan orang tua serta masyarakat, SMAN 3 Bandung terus berupaya untuk meningkatkan kualitas pendidikan dan mencetak generasi muda yang tidak hanya cerdas secara akademis, tetapi juga memiliki karakter yang baik. Keberhasilan SMAN 3 Bandung dalam menciptakan lingkungan belajar yang positif dan produktif menjadi salah satu alasan mengapa sekolah ini tetap menjadi pilihan utama bagi siswa-siswa yang ingin melanjutkan pendidikan di tingkat menengah atas.</p>
+  </main>
+
+  <footer>
+    <h2>HUBUNGI KAMI</h2>
+
+    <div>
+      <a href="#"><img src="../img/youtube.png"></a
+      ><a href="#"><img src="../img/twitter.png"></a
+      ><a href="#"><img src="../img/whatsapp.png"></a
+      ><a href="#"><img src="../img/instagram.png"></a>
+    </div>
+  </footer>
+
+  <script>
+    const footer = document.querySelector('footer');
+    const footerChilds = document.querySelectorAll('footer > *');
+
+    const defaultMargin = parseInt(
+      window.getComputedStyle(footerChilds[0])
+      .getPropertyValue('margin-inline')
+    );
+    
+    window.addEventListener('scroll', () => {
+      const footerRect = getCoords(footer);
+      const factor = (getBottomScroll() - footerRect.top) / footerRect.height;
+
+      for (let i = 0; i < footerChilds.length; i++) {
+        const margin = factor * defaultMargin;
+
+        footerChilds[i].style.setProperty('margin-inline', `${margin}px`);
+      }
+    });
+  </script>
+  
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Hymne SMA Negeri 3 Bandung</title>
+  
+  <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="scripts/scroll.js"></script>
+  <script src="scripts/lib.js"></script>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">BERANDA</a
+    ><a href="berita.html">BERITA</a
+    ><a href="hymne.html">HYMNE</a
+    ><a href="mars.html">MARS</a
+    ><a href="prestasi.html">PRESTASI</a>
+  </nav>
+
+  <script>
+    const nav = document.getElementsByTagName('nav')[0];
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) nav.setAttribute('small', 'true');
+       else nav.removeAttribute('small');
+    });
+  </script>
+
+  <header>
+    <h1>HYMNE SMAN 3</h1>
+  </header>
+
+  <script>
+    const heading = document.querySelector('header > h1');
+    const targetSpacing = 5;
+
+    window.addEventListener('scroll', () => {
+      const headingRect = getCoords(heading);
+      const factor = getScroll() / headingRect.height;
+
+      heading.style.setProperty('letter-spacing', `${factor * targetSpacing}px`);
+    });
+  </script>
+
+  <style>
+    main {
+      flex-direction: column;
+      letter-spacing: 0.2rem;
+    }
+
+    main p {
+      width: fit-content;
+      margin-inline: 10vw;
+    }
+  </style>
+
+  <main style="">
+    <p>
+      Warga SMA 3<br>
+      Sadar akan tugasmu<br>
+      Menjunjung, menjaga<br>
+      Nama pelajar
+    </p>
+
+    <p>
+      Walaupun ilmu berguna<br>
+      Budi luhur yang utama
+    </p>
+
+    <p>
+      Bangkitlah<br>
+      Jayalah<br>
+      Seluruh warga SMA 3
+    </p>
+  </main>
+
+  <footer>
+    <h2>HUBUNGI KAMI</h2>
+
+    <div>
+      <a href="#"><img src="img/youtube.png"></a
+      ><a href="#"><img src="img/twitter.png"></a
+      ><a href="#"><img src="img/whatsapp.png"></a
+      ><a href="#"><img src="img/instagram.png"></a>
+    </div>
+  </footer>
+
+  <script>
+    const footer = document.querySelector('footer');
+    const footerChilds = document.querySelectorAll('footer > *');
+
+    const defaultMargin = parseInt(
+      window.getComputedStyle(footerChilds[0])
+      .getPropertyValue('margin-inline')
+    );
+    
+    window.addEventListener('scroll', () => {
+      const footerRect = getCoords(footer);
+      const factor = (getBottomScroll() - footerRect.top) / footerRect.height;
+
+      for (let i = 0; i < footerChilds.length; i++) {
+        const margin = factor * defaultMargin;
+
+        footerChilds[i].style.setProperty('margin-inline', `${margin}px`);
+      }
+    });
+  </script>
+  
+</body>
+
+</html>

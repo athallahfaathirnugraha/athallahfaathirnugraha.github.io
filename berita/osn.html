@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>OSN SMA Negeri 3 Bandung</title>
+  
+  <link rel="stylesheet" href="../styles/default.css">
+  <link rel="stylesheet" href="../styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="../scripts/scroll.js"></script>
+  <script src="../scripts/lib.js"></script>
+
+  <style>
+    main {
+      padding-inline: 14%;
+      column-gap: 25px;
+      justify-content: center;
+    }
+
+    main img {
+      height: 250px;
+      object-fit: cover;
+
+      border: 9px solid white;
+      filter: drop-shadow(0 15px 5px #000000);
+
+      margin-block: 25px;
+    }
+
+    p {
+      text-indent: 3rem;
+      margin-block: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="../index.html">BERANDA</a
+    ><a href="../berita.html">BERITA</a
+    ><a href="../hymne.html">HYMNE</a
+    ><a href="../mars.html">MARS</a>
+  </nav>
+
+  <script>
+    const nav = document.getElementsByTagName('nav')[0];
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) nav.setAttribute('small', 'true');
+       else nav.removeAttribute('small');
+    });
+  </script>
+
+  <header>
+    <h1>OSN SMAN 3</h1>
+  </header>
+
+  <script>
+    const heading = document.querySelector('header > h1');
+    const targetSpacing = 5;
+
+    window.addEventListener('scroll', () => {
+      const headingRect = getCoords(heading);
+      const factor = getScroll() / headingRect.height;
+
+      heading.style.setProperty('letter-spacing', `${factor * targetSpacing}px`);
+    });
+  </script>
+
+  <main style="">
+    <p>Pelatihan Olimpiade Sains Nasional (OSN) di SMA Negeri 3 Bandung merupakan program unggulan yang diadakan secara rutin untuk mempersiapkan siswa berprestasi menghadapi kompetisi sains tingkat nasional. Pelatihan ini bertujuan untuk mengembangkan potensi akademik siswa dalam bidang sains, seperti Matematika, Fisika, Kimia, Biologi, dan bidang lainnya. Program ini dirancang khusus untuk siswa yang memiliki minat dan bakat dalam ilmu pengetahuan, dengan harapan mereka dapat berprestasi di tingkat yang lebih tinggi.</p>
+
+    <p>Pelatihan OSN di SMA Negeri 3 Bandung dilakukan secara intensif oleh guru-guru yang berkompeten di bidangnya. Selain itu, sekolah juga kerap mendatangkan mentor atau pembina eksternal yang merupakan ahli di masing-masing bidang sains. Hal ini dilakukan agar siswa mendapatkan panduan yang lebih mendalam dan berkualitas, sehingga mereka lebih siap dalam menghadapi soal-soal olimpiade yang seringkali membutuhkan pemahaman konsep yang mendalam dan kemampuan analisis tinggi.</p>
+
+    <p>Program pelatihan ini tidak hanya fokus pada pemberian materi, tetapi juga latihan soal dan simulasi kompetisi. Siswa dilatih untuk dapat berpikir kritis dan cepat dalam memecahkan masalah. Simulasi kompetisi sering diadakan untuk membiasakan siswa dengan tekanan waktu dan suasana lomba yang sesungguhnya. Dengan cara ini, siswa diharapkan dapat mengasah kemampuannya serta terbiasa dengan situasi kompetisi, sehingga tidak mudah gugup ketika berhadapan dengan tantangan nyata.</p>
+
+    <div size="normal" class="hori-container">
+      <img class="hori-img" src="../img/osn1.jpeg">
+      <img class="hori-img" src="../img/osn2.jpeg">
+      <img class="hori-img" src="../img/osn3.jpeg">
+    </div>
+
+    <p>Salah satu keunggulan pelatihan OSN di SMA Negeri 3 Bandung adalah adanya sistem mentoring individu. Setiap siswa yang terpilih untuk mengikuti pelatihan akan dibimbing secara personal oleh mentor yang ditugaskan khusus untuk mereka. Pendekatan ini memungkinkan mentor untuk memantau perkembangan siswa lebih detail dan memberikan solusi spesifik terhadap kesulitan yang dihadapi siswa dalam materi tertentu.</p>
+
+    <p>Prestasi yang telah diraih siswa SMA Negeri 3 Bandung dalam ajang OSN tingkat kota, provinsi, hingga nasional tidak lepas dari peran penting pelatihan ini. Setiap tahun, SMA Negeri 3 Bandung selalu berhasil meloloskan sejumlah siswa untuk berlaga di tingkat provinsi dan nasional. Hal ini menjadikan sekolah ini dikenal sebagai salah satu sekolah yang memiliki reputasi tinggi dalam dunia olimpiade sains di Indonesia.</p>
+
+    <p>Dengan pelatihan yang terstruktur dan dukungan penuh dari pihak sekolah, SMA Negeri 3 Bandung berharap dapat terus mencetak generasi muda yang berprestasi di bidang sains. Program ini tidak hanya membekali siswa dengan pengetahuan akademik, tetapi juga membentuk karakter siswa untuk berkompetisi secara sportif, bekerja keras, dan pantang menyerah dalam meraih mimpi-mimpi mereka.</p>
+  </main>
+
+  <footer>
+    <h2>HUBUNGI KAMI</h2>
+
+    <div>
+      <a href="#"><img src="../img/youtube.png"></a
+      ><a href="#"><img src="../img/twitter.png"></a
+      ><a href="#"><img src="../img/whatsapp.png"></a
+      ><a href="#"><img src="../img/instagram.png"></a>
+    </div>
+  </footer>
+
+  <script>
+    const footer = document.querySelector('footer');
+    const footerChilds = document.querySelectorAll('footer > *');
+
+    const defaultMargin = parseInt(
+      window.getComputedStyle(footerChilds[0])
+      .getPropertyValue('margin-inline')
+    );
+    
+    window.addEventListener('scroll', () => {
+      const footerRect = getCoords(footer);
+      const factor = (getBottomScroll() - footerRect.top) / footerRect.height;
+
+      for (let i = 0; i < footerChilds.length; i++) {
+        const margin = factor * defaultMargin;
+
+        footerChilds[i].style.setProperty('margin-inline', `${margin}px`);
+      }
+    });
+  </script>
+  
+</body>
+
+</html>

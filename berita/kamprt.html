@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>KAMPRT SMA Negeri 3 Bandung</title>
+  
+  <link rel="stylesheet" href="../styles/default.css">
+  <link rel="stylesheet" href="../styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="../scripts/scroll.js"></script>
+  <script src="../scripts/lib.js"></script>
+
+  <style>
+    main {
+      padding-inline: 14%;
+      column-gap: 25px;
+      justify-content: center;
+    }
+
+    img {
+      width: 130px;
+      height: 100%;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    p {
+      text-indent: 3rem;
+      margin-block: 20px;
+    }
+
+    p img[pos="right"] {
+      float: right;
+      margin-left: 12px;
+    }
+
+    p img[pos="left"] {
+      float: left;
+      margin-right: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="../index.html">BERANDA</a
+    ><a href="../berita.html">BERITA</a
+    ><a href="../hymne.html">HYMNE</a
+    ><a href="../mars.html">MARS</a>
+  </nav>
+
+  <script>
+    const nav = document.getElementsByTagName('nav')[0];
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) nav.setAttribute('small', 'true');
+       else nav.removeAttribute('small');
+    });
+  </script>
+
+  <header>
+    <h1>KAMPRT SMAN 3</h1>
+  </header>
+
+  <script>
+    const heading = document.querySelector('header > h1');
+    const targetSpacing = 5;
+
+    window.addEventListener('scroll', () => {
+      const headingRect = getCoords(heading);
+      const factor = getScroll() / headingRect.height;
+
+      heading.style.setProperty('letter-spacing', `${factor * targetSpacing}px`);
+    });
+  </script>
+
+  <main style="">
+    <p>KAMPRT adalah acara camping tahunan yang diadakan oleh SMA Negeri 3 Bandung. Acara ini berlangsung selama dua hari satu malam dan dirancang untuk memberikan pengalaman berkemah yang menyenangkan sekaligus edukatif bagi para siswa. KAMPRT bertujuan untuk membekali siswa dengan berbagai keterampilan praktis yang berguna, terutama dalam situasi darurat di alam bebas. Selain itu, acara ini juga menjadi ajang untuk meningkatkan kebersamaan dan kerjasama antar siswa.</p>
+
+    <p>
+      Salah satu kegiatan utama dalam KAMPRT adalah pelatihan cara membuat tenda. Di sini, siswa diajarkan bagaimana memilih lokasi yang tepat, mengatur peralatan berkemah, hingga mendirikan tenda yang kokoh. Kegiatan ini bertujuan untuk melatih kemandirian dan ketelitian, serta membantu siswa memahami pentingnya perencanaan dalam berkemah. Setelah sesi teori, setiap kelompok siswa diberi kesempatan untuk mempraktikkan apa yang telah mereka pelajari, menambah unsur kompetisi yang menyenangkan di antara kelompok-kelompok tersebut.</p>
+
+    <div size="normal" class="hori-container">
+      <img class="hori-img" src="../img/kamprt1.jpeg">
+      <img class="hori-img" src="../img/kamprt2.jpeg">
+      <img class="hori-img" src="../img/kamprt3.jpeg">
+      <img class="hori-img" src="../img/kamprt4.jpeg">
+      <img class="hori-img" src="../img/kamprt5.jpeg">
+      <img class="hori-img" src="../img/kamprt6.jpeg">
+    </div>
+
+    <p>Selain pelatihan mendirikan tenda, KAMPRT juga mengajarkan keterampilan bertahan hidup di alam liar, salah satunya adalah cara menangani ular. Dalam sesi ini, instruktur berpengalaman menjelaskan berbagai jenis ular, cara mengenali mana yang berbahaya, serta tindakan yang harus dilakukan jika bertemu atau digigit ular. Siswa diajarkan untuk tetap tenang, tidak panik, dan menggunakan alat-alat sederhana yang ada di sekitar untuk menjaga keamanan. Pelajaran ini memberi pemahaman penting tentang keselamatan di alam bebas.</p>
+
+    <p>Selama acara berlangsung, siswa juga belajar keterampilan lainnya seperti cara membuat api unggun, cara memasak makanan sederhana di alam terbuka, serta pelatihan navigasi menggunakan kompas. Semua kegiatan ini tidak hanya mengasah kemampuan teknis siswa, tetapi juga mengajarkan nilai-nilai kerjasama, tanggung jawab, dan kepemimpinan. Setiap siswa memiliki peran dalam kelompoknya, sehingga semua berkontribusi untuk keberhasilan tim selama camping.</p>
+
+    <p>KAMPRT bukan hanya tentang belajar keterampilan praktis, tetapi juga menjadi sarana rekreasi dan membangun kebersamaan. Di malam hari, acara ditutup dengan api unggun, di mana siswa dapat bernyanyi, bercerita, dan berbagi pengalaman dengan teman-teman mereka. Momen ini menjadi puncak dari seluruh kegiatan, menciptakan kenangan yang tak terlupakan bagi setiap peserta. Dengan kombinasi pembelajaran dan rekreasi, KAMPRT terus menjadi salah satu acara paling dinantikan di SMA Negeri 3 Bandung.</p>
+  </main>
+
+  <footer>
+    <h2>HUBUNGI KAMI</h2>
+
+    <div>
+      <a href="#"><img src="../img/youtube.png"></a
+      ><a href="#"><img src="../img/twitter.png"></a
+      ><a href="#"><img src="../img/whatsapp.png"></a
+      ><a href="#"><img src="../img/instagram.png"></a>
+    </div>
+  </footer>
+
+  <script>
+    const footer = document.querySelector('footer');
+    const footerChilds = document.querySelectorAll('footer > *');
+
+    const defaultMargin = parseInt(
+      window.getComputedStyle(footerChilds[0])
+      .getPropertyValue('margin-inline')
+    );
+    
+    window.addEventListener('scroll', () => {
+      const footerRect = getCoords(footer);
+      const factor = (getBottomScroll() - footerRect.top) / footerRect.height;
+
+      for (let i = 0; i < footerChilds.length; i++) {
+        const margin = factor * defaultMargin;
+
+        footerChilds[i].style.setProperty('margin-inline', `${margin}px`);
+      }
+    });
+  </script>
+  
+</body>
+
+</html>

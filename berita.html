@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>SMA Negeri 3 Bandung</title>
+  
+  <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="scripts/scroll.js"></script>
+  <script src="scripts/lib.js"></script>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">BERANDA</a
+    ><a href="berita.html">BERITA</a
+    ><a href="hymne.html">HYMNE</a
+    ><a href="mars.html">MARS</a
+    ><a href="prestasi.html">PRESTASI</a>
+  </nav>
+
+  <script>
+    const nav = document.getElementsByTagName('nav')[0];
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) nav.setAttribute('small', 'true');
+       else nav.removeAttribute('small');
+    });
+  </script>
+
+  <header>
+    <h1>BERITA SMAN 3</h1>
+  </header>
+
+  <script>
+    const heading = document.querySelector('header > h1');
+    const targetSpacing = 5;
+
+    window.addEventListener('scroll', () => {
+      const headingRect = getCoords(heading);
+      const factor = getScroll() / headingRect.height;
+
+      heading.style.setProperty('letter-spacing', `${factor * targetSpacing}px`);
+    });
+  </script>
+
+  <main>
+    <div size="normal" class="hori-container">
+      <style>
+        .hori-container a {
+          display: block;
+          
+          background-color: #ffeee6;
+          width: 250px;
+          height: 350px;
+
+          border-radius: 0 0 30px 30px;
+
+          flex: 0 0 auto;
+
+          padding: 30px;
+
+          overflow-y: hidden;
+
+          text-decoration: none;
+          color: black;
+        }
+
+        .hori-container p {
+          font-size: 12px;
+          margin: 0;
+
+          height: 30%;
+          overflow: hidden;
+
+          padding-top: 10px;
+          box-sizing: border-box;
+        }
+
+        .hori-container img {
+          width: 100%;
+          height: 70%;
+          object-fit: cover;
+        }
+      </style>
+
+      <a href="berita/porak.html">
+        <img src="img/porak1.jpeg">
+        <p>PORAK, atau Pekan Olahraga Antar Kelas, adalah salah satu ajang tahunan yang paling ditunggu oleh para siswa di SMA Negeri 3 Bandung. Acara ini merupakan kompetisi olahraga yang melibatkan seluruh kelas, dengan tujuan untuk mempererat hubungan antar siswa serta menumbuhkan semangat sportivitas dan kebersamaan. Kegiatan ini biasanya diadakan pada semester ganjil dan melibatkan berbagai cabang olahraga seperti futsal, basket, voli, dan bulu tangkis.</p>
+      </a>
+
+      <a href="berita/kamprt.html">
+        <img src="img/kamprt1.jpeg">
+        <p>KAMPRT adalah acara camping tahunan yang diadakan oleh SMA Negeri 3 Bandung. Acara ini berlangsung selama dua hari satu malam dan dirancang untuk memberikan pengalaman berkemah yang menyenangkan sekaligus edukatif bagi para siswa. KAMPRT bertujuan untuk membekali siswa dengan berbagai keterampilan praktis yang berguna, terutama dalam situasi darurat di alam bebas. Selain itu, acara ini juga menjadi ajang untuk meningkatkan kebersamaan dan kerjasama antar siswa.</p>
+      </a>
+
+      <a href="berita/tributes.html">
+        <img src="img/tributes1.jpeg">
+        <p>Tributes SMA Negeri 3 Bandung 2023 adalah acara musik klasik tahunan yang diselenggarakan oleh sekolah, menampilkan siswa-siswa berbakat dalam memainkan karya-karya musik klasik. Acara ini diadakan di Dago Tea House, salah satu tempat seni dan budaya yang ikonik di Bandung, yang menawarkan suasana yang sempurna untuk menikmati alunan musik klasik. Tributes menjadi momen istimewa bagi para pemain untuk menunjukkan kemampuan mereka dalam menampilkan karya-karya komposer besar dunia, sekaligus memperkenalkan musik klasik kepada generasi muda.</p>
+      </a>
+
+      <a href="berita/osn.html">
+        <img src="img/osn1.jpeg">
+        <p>Pelatihan Olimpiade Sains Nasional (OSN) di SMA Negeri 3 Bandung merupakan program unggulan yang diadakan secara rutin untuk mempersiapkan siswa berprestasi menghadapi kompetisi sains tingkat nasional. Pelatihan ini bertujuan untuk mengembangkan potensi akademik siswa dalam bidang sains, seperti Matematika, Fisika, Kimia, Biologi, dan bidang lainnya. Program ini dirancang khusus untuk siswa yang memiliki minat dan bakat dalam ilmu pengetahuan, dengan harapan mereka dapat berprestasi di tingkat yang lebih tinggi.</p>
+      </a>
+
+      <a href="berita/sejarah.html">
+        <img src="img/tributes2.png">
+        <p>Sekolah Menengah Atas Negeri 3 Bandung, yang sering dikenal sebagai SMAN 3 Bandung, adalah salah satu sekolah menengah atas yang terkemuka di Indonesia. Didirikan pada tahun 1955, sekolah ini awalnya berfungsi sebagai Sekolah Menengah Pertama dan kemudian berkembang menjadi Sekolah Menengah Atas. Sejak awal berdirinya, SMAN 3 Bandung telah berkomitmen untuk memberikan pendidikan berkualitas tinggi, dengan tujuan mencetak generasi muda yang berprestasi dan mampu bersaing di tingkat nasional maupun internasional.</p>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <h2>HUBUNGI KAMI</h2>
+
+    <div>
+      <a href="#"><img src="img/youtube.png"></a
+      ><a href="#"><img src="img/twitter.png"></a
+      ><a href="#"><img src="img/whatsapp.png"></a
+      ><a href="#"><img src="img/instagram.png"></a>
+    </div>
+  </footer>
+
+  <script>
+    const footer = document.querySelector('footer');
+    const footerChilds = document.querySelectorAll('footer > *');
+
+    const defaultMargin = parseInt(
+      window.getComputedStyle(footerChilds[0])
+      .getPropertyValue('margin-inline')
+    );
+    
+    window.addEventListener('scroll', () => {
+      const footerRect = getCoords(footer);
+      const factor = (getBottomScroll() - footerRect.top) / footerRect.height;
+
+      for (let i = 0; i < footerChilds.length; i++) {
+        const margin = factor * defaultMargin;
+
+        footerChilds[i].style.setProperty('margin-inline', `${margin}px`);
+      }
+    });
+  </script>
+  
+</body>
+
+</html>

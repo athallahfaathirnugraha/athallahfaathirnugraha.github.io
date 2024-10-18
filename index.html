@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>SMA Negeri 3 Bandung</title>
+  
+  <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="scripts/scroll.js"></script>
+  <script src="scripts/lib.js"></script>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">BERANDA</a
+    ><a href="berita.html">BERITA</a
+    ><a href="hymne.html">HYMNE</a
+    ><a href="mars.html">MARS</a
+    ><a href="prestasi.html">PRESTASI</a>
+  </nav>
+
+  <script>
+    const nav = document.getElementsByTagName('nav')[0];
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) nav.setAttribute('small', 'true');
+       else nav.removeAttribute('small');
+    });
+  </script>
+
+  <header>
+    <h1>SMA NEGERI 3</h1>
+  </header>
+
+  <script>
+    const heading = document.querySelector('header > h1');
+    const targetSpacing = 5;
+
+    window.addEventListener('scroll', () => {
+      const headingRect = getCoords(heading);
+      const factor = getScroll() / headingRect.height;
+
+      heading.style.setProperty('letter-spacing', `${factor * targetSpacing}px`);
+    });
+  </script>
+
+  <main>
+    <div size="normal">
+      <p>
+        SMA Negeri 3 Bandung adalah salah satu sekolah menengah atas terbaik di Kota
+        Bandung yang dikenal dengan prestasi akademik dan non-akademiknya. Sekolah ini
+        memiliki sejarah panjang sebagai institusi pendidikan yang melahirkan
+        lulusan-lulusan berkualitas dan berprestasi di berbagai bidang. Berlokasi di
+        Jl. Belitung, SMA 3 Bandung berdiri megah dengan suasana lingkungan yang
+        nyaman dan mendukung proses belajar mengajar. Siswa-siswi di sini dikenal
+        sebagai pelajar yang cerdas, kreatif, dan aktif dalam beragam kegiatan.
+      </p>
+    </div>
+
+    <div size="small">
+      <h1>BERITA SEKOLAH</h1>
+      
+      <a href="berita/porak.html" class="list-a">PORAK SMA Negeri 3 Bandung</a>
+      <a href="berita/kamprt.html" class="list-a">KAMPRT SMA Negeri 3 Bandung</a>
+      <a href="berita/tributes.html" class="list-a">TRIBUTES 2023</a>
+      <a href="berita.html" class="list-a">...lihat lebih lanjut</a>
+    </div>
+
+    <div size="normal" class="hori-container">
+      <img class="hori-img" src="img/piala1.jpg">
+      <img class="hori-img" src="img/piala2.jpg">
+      <img class="hori-img" src="img/piala3.jpg">
+      <img class="hori-img" src="img/piala4.jpg">
+      <img class="hori-img" src="img/piala5.webp">
+      <img class="hori-img" src="img/piala1.jpg">
+      <img class="hori-img" src="img/piala2.jpg">
+      <img class="hori-img" src="img/piala3.jpg">
+      <img class="hori-img" src="img/piala4.jpg">
+      <img class="hori-img" src="img/piala5.webp">
+      <img class="hori-img" src="img/regu17.jpeg">
+      <img class="hori-img" src="img/ttc.jpeg">
+    </div>
+
+    <script>{
+      const imgs = document.querySelectorAll('.hori-img');
+
+      for (let i = 0; i < imgs.length; i++) {
+        let deg = Math.random() * 5 - 2.5;
+        let scale = (Math.random() + 1) / 1.55;
+        
+        imgs[i].style.setProperty('transform', `rotate(${deg}deg) scale(${scale})`);
+      }
+    }</script>
+
+    <div size="normal">
+      <div size="half">
+        <p>
+          Selain itu, SMA Negeri 3 Bandung juga memiliki beragam fasilitas penunjang yang modern dan lengkap. Laboratorium sains, ruang komputer, perpustakaan dengan koleksi buku yang beragam, serta fasilitas olahraga seperti lapangan basket dan futsal, semuanya tersedia untuk mendukung kegiatan akademik maupun ekstrakurikuler siswa. Berbagai organisasi dan ekstrakurikuler aktif seperti OSIS, Paskibra, seni tari, musik, teater, hingga olahraga turut mengasah kemampuan non-akademik siswa dalam bidang kepemimpinan, seni, dan olahraga.
+        </p>
+      </div>
+
+      <div size="half">
+        <p>
+          Prestasi-prestasi gemilang baik di tingkat kota, provinsi, nasional, bahkan internasional sering diraih oleh siswa-siswi SMA Negeri 3 Bandung. Mereka kerap menjuarai berbagai kompetisi, seperti olimpiade sains, lomba debat, dan kompetisi olahraga. Tak heran jika SMA Negeri 3 Bandung menjadi salah satu pilihan utama bagi para orang tua dan siswa yang ingin menempuh pendidikan di lingkungan yang kompetitif dan berkualitas.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <h2>HUBUNGI KAMI</h2>
+
+    <div>
+      <a href="#"><img src="img/youtube.png"></a
+      ><a href="#"><img src="img/twitter.png"></a
+      ><a href="#"><img src="img/whatsapp.png"></a
+      ><a href="#"><img src="img/instagram.png"></a>
+    </div>
+  </footer>
+
+  <script>
+    const footer = document.querySelector('footer');
+    const footerChilds = document.querySelectorAll('footer > *');
+
+    const defaultMargin = parseInt(
+      window.getComputedStyle(footerChilds[0])
+      .getPropertyValue('margin-inline')
+    );
+    
+    window.addEventListener('scroll', () => {
+      const footerRect = getCoords(footer);
+      const factor = (getBottomScroll() - footerRect.top) / footerRect.height;
+
+      for (let i = 0; i < footerChilds.length; i++) {
+        const margin = factor * defaultMargin;
+
+        footerChilds[i].style.setProperty('margin-inline', `${margin}px`);
+      }
+    });
+  </script>
+  
+</body>
+
+</html>
